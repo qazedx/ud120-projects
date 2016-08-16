@@ -30,15 +30,46 @@ plt.show()
 
 ### your code here!  name your classifier object clf if you want the 
 ### visualization code (prettyPicture) to show you the decision boundary
+from sklearn.metrics import accuracy_score
+
+from sklearn.neighbors.nearest_centroid import NearestCentroid
+clf = NearestCentroid()
+clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+acc = accuracy_score(labels_test, pred)
+print acc
+
+from sklearn.tree import DecisionTreeClassifier
+clf = DecisionTreeClassifier(min_samples_split=40)
+print 'rr'
+clf.fit(features_train, labels_train)
+
+print 'dd'
+
+pred = clf.predict(features_test)
+print 'ff'
+acc = accuracy_score(labels_test, pred)
+print acc
 
 
+# from sklearn.neighbors import NearestNeighbors
+# clf = NearestNeighbors()
+# clf.fit(features_train, labels_train)
+# pred = clf.predict(features_test)
+# acc = accuracy_score(labels_test, pred)
+# print acc
 
-
-
+from sklearn.ensemble import RandomForestClassifier
+clf = RandomForestClassifier()
+clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+acc = accuracy_score(labels_test, pred)
+print acc
 
 
 
 try:
+    print "oo"
     prettyPicture(clf, features_test, labels_test)
 except NameError:
     pass

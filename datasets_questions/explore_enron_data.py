@@ -19,4 +19,12 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
+print enron_data["Jeffrey Skilling"]
+a=0
+for key , value in enron_data.iteritems():
+    # print key
+    if value['poi'] == True:
+        a = a+1
+    # print value['poi']
 
+print a
